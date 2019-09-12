@@ -1,0 +1,36 @@
+header {
+    padding: 15px;
+    border-bottom: 1px solid #556066;
+}
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        color: #b50156;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px;
+        display: inline-block;
+        padding: 10px 15px;
+        position: relative;
+        span {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #b50156;
+            border-radius: 50%;
+            padding: 5px;
+            color: #ffffff;
+            font-size: 10px;
+            width: 24px;
+            height: 24px;
+            text-align: center;
+        }
+    }
+}

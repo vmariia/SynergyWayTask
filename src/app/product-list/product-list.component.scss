@@ -1,0 +1,135 @@
+.button {
+    position: relative;
+    padding: 10px 30px;
+    background: #b50156;
+    border: 2px solid #b50156;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    @media screen and (min-width: 992px) {
+        &:hover {
+            color: #b50156;
+            background: #fff;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        padding: 10px 15px;
+    } 
+}
+.product-container {
+    margin: 70px -15px;
+}
+.product-wrapper {
+    padding: 15px 0;
+    @media screen and (max-width: 991px) {
+        border-bottom: 1px solid #ebebeb;
+    } 
+    .name {
+        font-size: 24px;
+        color: #b50156;
+        margin-bottom: 15px;
+        font-weight: 900;
+    }
+    .desc {
+        font-size: 20px;
+        color: #002f43;
+        margin-bottom: 15px;
+    }
+    .product-price {
+        color: #002f43;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 15px;
+        span {
+            font-weight: 900;
+        }
+        i {
+            font-weight: 700;
+            font-style: normal;
+        }
+    }
+    &-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .product-count {
+            position: relative;
+            width: 120px;
+        }
+        input {
+            width: 100%;
+            height: 40px;
+            outline: none;
+            padding: 5px 40px;
+            border: 1px solid #ebebeb;
+            font-size: 16px;
+            line-height: 27px;
+            letter-spacing: .15px;
+            color: #666;
+            text-align: center;
+            border-radius: 3px;
+        }
+        button {
+            position: absolute;
+            top: 0;
+            height: 40px;
+            width: 40px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            &.less-product {
+                left: 0;
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 10px;
+                    height: 2px;
+                    background: #002f43;
+                    -webkit-transition: all .25s linear;
+                    transition: all .25s linear;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            &.more-product {
+                right: 0;
+                &:before,
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 10px;
+                    height: 2px;
+                    background: #002f43;
+                    transition: all .25s linear;
+                    transform: translate(-50%, -50%);
+                }
+                &:after {
+                    width: 2px;
+                    height: 10px;
+                }
+            }
+            @media screen and (min-width: 992px) {
+                &:hover {
+                    &.more-product {
+                        &:before,
+                        &:after {
+                            background: #b50156;
+                        }
+                    }
+                    &.less-product {
+                        &:before {
+                            background: #b50156;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

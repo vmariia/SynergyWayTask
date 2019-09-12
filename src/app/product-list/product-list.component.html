@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row product-container">
+        <div class="col-lg-4 col-md-6" *ngFor="let product of products">
+            <div class="product-wrapper">
+                <div class="name">
+                    {{ product.name }}
+                </div>
+                <div class="desc">
+                    {{ product.label }}
+                </div>
+                <div class="product-price">
+                    <span>{{ product.price | currency:'USD' }}</span>
+                </div>
+                <div class="product-wrapper-button">
+                    <div class="product-count">
+                        <button (click)="decreament(product)"  type="button" class="less-product"></button>
+                        <input readonly="" type="text" [value]="product.count">
+                        <button (click)="increament(product)"  type="button" class="more-product"></button>
+                    </div>
+                    <div class="button" (click)="addToCart(product)">
+                        Add to cart
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

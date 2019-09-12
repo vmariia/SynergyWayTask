@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="cart-wrapper" *ngIf="cartProducts.length > 0; else noProduct">
+                <div class="table">
+                    <div class="table-body">
+                        <div class="table-row" *ngFor="let product of cartProducts">
+                            <div class="table-column">
+                                <div class="name">
+                                    {{ product.name }}
+                                </div>
+                            </div>
+                            <div class="table-column">
+                                <div class="desc">
+                                    <p>{{ product.label }}</p>
+                                </div>
+                            </div>
+                            <div class="table-column">
+                                <div class="price">
+                                    <span>{{ product.price | currency:'USD' }}</span>
+                                </div>
+                            </div>
+                            <div class="table-column">
+                                <div class="product-count">
+                                    <button (click)="decreament(product)"  type="button" class="less-product"></button>
+                                    <input readonly="" type="text" [value]="product.count">
+                                    <button (click)="increament(product)"  type="button" class="more-product"></button>
+                                </div>
+                            </div>
+                            <div class="table-column">
+                                <div class="delete-product" (click)="removeFromCart(product)">
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="general-price">
+                    <p>General price:</p>
+                    <div class="price">
+                        {{ generalPrice | currency:'USD' }}
+                    </div>
+                </div>
+            </div>
+            <ng-template #noProduct>
+                <div class="empty-cart">
+                    Your cart is empty!
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>
